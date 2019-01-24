@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <#assign  user=Session.SPRING_SECURITY_CONTEXT.authentication.principal/>
+</head>
+<body>
+<!--欢迎你,${user.username}<br/>-->
+<!--/*@thymesVar id="principal" type="aj"*/-->
+<h1 th:text="${user.username}"></h1>
+<a href="/logout">注销</a>
+</body>
+</html>
